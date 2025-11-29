@@ -1,0 +1,18 @@
+cat_disease_cls_runs/
+cat_disease_yolo_dataset/
+cat_emotion_base_dataset/
+cat_emotion_cls_runs/
+data/
+dataset/
+Dog Disease Detection.v2i.yolov8/
+Dog Emotion/
+Dog Skin Disease Dataset.v2i.folder/
+dog_disease_cls_runs/
+dog_disease_yolo_dataset/
+master_disease_dataset/
+Nirman5.0/
+primary/
+runs/
+Skin Lesion Dataset/
+SkinDisNet/
+yolo_gpu_test_data/
