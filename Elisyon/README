@@ -1,7 +1,7 @@
-# 🩺 Eliyon – AI Emotion & Health Scanner for Babies, Dogs & Cats 🍼🐶🐱  
+# 🩺 Elisyon – AI Emotion & Health Scanner for Babies, Dogs & Cats 🍼🐶🐱  
 **“Giving a voice to those who cannot speak.”**
 
-Eliyon is an **AI-powered health and emotion pre-screening assistant** designed for **babies (0–5 years), dogs, and cats**.  
+Elisyon is an **AI-powered health and emotion pre-screening assistant** designed for **babies (0–5 years), dogs, and cats**.  
 Using only a **photo** captured from a smartphone or webcam, it analyzes:
 
 ✔ Emotion (crying, angry, sad, scared, happy, calm)  
@@ -12,7 +12,7 @@ It acts as an **early-warning assistant** — *not a medical replacement* — en
 
 ---
 
-## 🌟 What Makes Eliyon Special?
+## 🌟 What Makes Elisyon Special?
 
 | Feature | Babies (0–5 yrs) | Dogs | Cats |
 |--------|------------------|------|------|
@@ -23,7 +23,7 @@ It acts as an **early-warning assistant** — *not a medical replacement* — en
 | Responsive futuristic UI | ✔️ | ✔️ | ✔️ |
 | Login & History tracking | ✔️ | ✔️ | ✔️ |
 
-> ⚠️ **Disclaimer:** Eliyon does **not prescribe treatment**.  
+> ⚠️ **Disclaimer:** Elisyon does **not prescribe treatment**.  
 > It is a **decision support & awareness tool**, not a medical device.
 
 ---
@@ -98,7 +98,7 @@ uvicorn eliyon_api:app --host 0.0.0.0 --port 8000 --reload
 Expected output:
 
 Uvicorn running on http://0.0.0.0:8000
-Loading Eliyon models for API...
+Loading Elisyon models for API...
 ✅ Models loaded for API.
 
 5.  Open Web App
@@ -137,7 +137,7 @@ Ear Disease Model	Baby	Wax, Perforation, Otitis Media, Externa
 Health Model	Dog/Cat	Allergic, Bacterial, Fungal infections, Healthy
 🔐 Ethics, Limitations & Responsible Use
 
-❗ Eliyon does not diagnose or prescribe treatment. It only provides visual insights.
+❗ Elisyon does not diagnose or prescribe treatment. It only provides visual insights.
 
 Responsible AI Principles:
 
@@ -146,5 +146,6 @@ Responsible AI Principles:
 🧠 Human-in-the-loop: Final decision always belongs to doctor/vet
 
 🕵️ Privacy-first: No cloud image storage (local-only demo)
+
 
 🧪 Bias awareness: Lighting, ethnicity, rare diseases may affect results
