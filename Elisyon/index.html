@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eliyon – AI Health & Emotion Scanner for Kids & Pets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Remix Icons (for nice icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">E</span>
+        <span class="logo-text">Eliyon</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#species">Who We Scan</a>
+        <a href="#demo">Live Demo</a>
+        <a href="#auth">Login / Signup</a>
+        <a href="#history">History</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <!-- Scan button -->
+      <button class="nav-cta" onclick="scrollToSection('demo')">
+        Scan Now
+      </button>
+
+      <!-- ✅ User avatar + name (shown only when logged in) -->
+      <div class="nav-user" id="navUser" style="display: none;">
+        <div class="nav-user-avatar">
+          <i class="ri-user-3-line"></i>
+        </div>
+        <div class="nav-user-info">
+          <span id="navUserName" class="nav-user-name">Guest</span>
+          <button id="logoutBtn" class="nav-user-logout" type="button" title="Logout">
+            <i class="ri-logout-box-r-line"></i>
+          </button>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle">
+        <i class="ri-menu-3-line"></i>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#hero" onclick="closeMobileNav()">Home</a>
+      <a href="#species" onclick="closeMobileNav()">Who We Scan</a>
+      <a href="#demo" onclick="closeMobileNav()">Live Demo</a>
+      <a href="#auth" onclick="closeMobileNav()">Login / Signup</a>
+      <a href="#history" onclick="closeMobileNav()">History</a>
+      <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
+      <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+    </div>
+  </header>
+
+  <!-- Floating background blobs -->
+  <div class="bg-blob bg-blob-1"></div>
+  <div class="bg-blob bg-blob-2"></div>
+  <div class="bg-blob bg-blob-3"></div>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="hero section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="badge">AI-POWERED • EARLY HEALTH INSIGHTS</div>
+        <h1>
+          Eliyon<br />
+          <span class="hero-gradient">
+            Health & Emotion Scanner
+          </span>
+          <br />
+          for Kids & Pets
+        </h1>
+        <p class="hero-subtitle">
+          Scan a single photo of your child, dog, or cat.  
+          Eliyon instantly analyzes <strong>emotions</strong> and <strong>early health signals</strong>  
+          like skin issues and ear infections – before things get serious.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="scrollToSection('demo')">
+            <i class="ri-scan-2-line"></i> Start Scan
+          </button>
+          <button class="btn btn-ghost" onclick="scrollToSection('how-it-works')">
+            <i class="ri-play-circle-line"></i> How it works
+          </button>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <span class="metric-number">3</span>
+            <span class="metric-label">Species</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">18+</span>
+            <span class="metric-label">Disease Types</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">95%+</span>
+            <span class="metric-label">Class Accuracy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-orbit">
+          <div class="orbit-circle orbit-child">
+            <span class="orbit-label">Kids (0–5)</span>
+          </div>
+          <div class="orbit-circle orbit-dog">
+            <span class="orbit-label">Dogs</span>
+          </div>
+          <div class="orbit-circle orbit-cat">
+            <span class="orbit-label">Cats</span>
+          </div>
+          <div class="hero-core-card">
+            <div class="core-camera">
+              <i class="ri-camera-3-line"></i>
+            </div>
+            <p class="core-text">
+              Drop a photo in.<br />
+              Eliyon’s dual AI engines scan<br />
+              <strong>emotion + health</strong> together.
+            </p>
+            <div class="core-status">
+              <span class="status-dot"></span>
+              Real-time AI analysis
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" onclick="scrollToSection('species')">
+      <span>Scroll to explore</span>
+      <i class="ri-arrow-down-s-line"></i>
+    </div>
+  </section>
+
+  <!-- ================= SPECIES SECTION ================= -->
+  <section id="species" class="section species">
+    <div class="section-header">
+      <h2>Who can Eliyon scan?</h2>
+      <p>
+        One unified platform for your most vulnerable family members –  
+        <strong>babies</strong>, <strong>dogs</strong>, and <strong>cats</strong>.
+      </p>
+    </div>
+    <div class="species-grid">
+      <!-- Baby -->
+      <div class="species-card in-view">
+        <div class="species-icon species-baby">
+          <i class="ri-emotion-laugh-line"></i>
+        </div>
+        <h3>Babies (0–5 years)</h3>
+        <p>
+          Detect mood (cry, angry, laugh, normal) and early signs  
+          of skin conditions, jaundice, and ear problems.
+        </p>
+        <div class="species-actions">
+          <button class="btn btn-mini" onclick="openDemo('baby','emotion')">
+            Emotion Scan
+          </button>
+          <button class="btn btn-mini-outline" onclick="openDemo('baby','health')">
+            Health Scan
+          </button>
+        </div>
+      </div>
+      <!-- Dog -->
+      <div class="species-card">
+        <div class="species-icon species-dog">
+          <i class="ri-dog-line"></i>
+        </div>
+        <h3>Dogs</h3>
+        <p>
+          Understand your dog’s emotions and check for  
+          common diseases using just a photo.
+        </p>
+        <div class="species-actions">
+          <button class="btn btn-mini" onclick="openDemo('dog','emotion')">
+            Emotion Scan
+          </button>
+          <button class="btn btn-mini-outline" onclick="openDemo('dog','health')">
+            Health Scan
+          </button>
+        </div>
+      </div>
+      <!-- Cat -->
+      <div class="species-card">
+        <div class="species-icon species-cat">
+          <i class="ri-cat-line"></i>
+        </div>
+        <h3>Cats</h3>
+        <p>
+          Decode your cat’s subtle moods and spot  
+          early skin or health anomalies.
+        </p>
+        <div class="species-actions">
+          <button class="btn btn-mini" onclick="openDemo('cat','emotion')">
+            Emotion Scan
+          </button>
+          <button class="btn btn-mini-outline" onclick="openDemo('cat','health')">
+            Health Scan
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LIVE DEMO SECTION ================= -->
+  <section id="demo" class="section demo">
+    <div class="section-header">
+      <h2>Live Demo</h2>
+      <p>
+        Upload a photo or capture one from your camera.  
+        If the backend is running and you are logged in, Eliyon uses your real YOLO models.  
+        If not, it falls back to safe mock results for UI testing.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">
+        <strong>Note:</strong> You must be logged in to run a real scan. Otherwise, only mock results are shown.
+      </p>
+    </div>
+
+    <!-- Species Tabs -->
+    <div class="tab-group">
+      <button class="tab-btn active" data-species="baby">Kids</button>
+      <button class="tab-btn" data-species="dog">Dogs</button>
+      <button class="tab-btn" data-species="cat">Cats</button>
+    </div>
+
+    <!-- Mode Tabs -->
+    <div class="tab-mode-group">
+      <button class="mode-btn active" data-mode="emotion">Emotion</button>
+      <button class="mode-btn" data-mode="health">Health</button>
+    </div>
+
+    <div class="demo-layout">
+      <!-- Left: Upload/Webcam -->
+      <div class="demo-panel upload-panel">
+        <h3 class="demo-title">
+          <span id="demoTitleSpecies">Kids</span>
+          • <span id="demoTitleMode">Emotion Scan</span>
+        </h3>
+
+        <div class="input-toggle">
+          <button class="input-btn active" data-input="upload">
+            <i class="ri-upload-cloud-2-line"></i> Upload Photo
+          </button>
+          <button class="input-btn" data-input="camera">
+            <i class="ri-camera-3-line"></i> Use Camera
+          </button>
+        </div>
+
+        <div class="input-area">
+          <!-- Upload mode -->
+          <div class="input-upload input-mode active">
+            <label for="fileInput" class="dropzone" id="dropzone">
+              <i class="ri-image-add-line"></i>
+              <p>Drag & drop a photo here or click to browse</p>
+              <span id="fileName">No file selected</span>
+            </label>
+            <input type="file" id="fileInput" accept="image/*" hidden />
+          </div>
+
+          <!-- ✅ Camera mode with live preview -->
+          <div class="input-camera input-mode">
+            <div class="camera-container">
+              <video id="cameraVideo" class="camera-video" autoplay playsinline></video>
+              <canvas id="cameraCanvas" style="display: none;"></canvas>
+            </div>
+            <p class="camera-hint">
+              Click <strong>Start Camera</strong>, position the face inside the frame,  
+              then press <strong>Run AI Scan</strong> to capture and analyze.
+            </p>
+            <button type="button" class="btn btn-mini-outline" id="startCameraBtn">
+              <i class="ri-camera-line"></i> Start Camera
+            </button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-full" id="runScanBtn">
+          <i class="ri-pulse-line"></i> Run AI Scan
+        </button>
+        <!-- Status text used by JS -->
+        <p class="demo-note" id="scanStatus"></p>
+      </div>
+
+      <!-- Right: Result -->
+      <div class="demo-panel result-panel">
+        <h3 class="demo-title">AI Result Preview</h3>
+        <div class="result-card" id="resultCard">
+          <div class="result-placeholder">
+            <i class="ri-magic-line"></i>
+            <p>Run a scan to see predictions here.</p>
+          </div>
+        </div>
+
+        <div class="result-info">
+          <div class="result-badges" id="resultBadges"></div>
+          <div class="result-actions">
+            <button class="btn btn-mini-outline" onclick="resetDemo()">
+              <i class="ri-refresh-line"></i> Reset
+            </button>
+            <button class="btn btn-mini" onclick="scrollToSection('how-it-works')">
+              Learn how Eliyon thinks
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOGIN / SIGNUP SECTION ================= -->
+  <section id="auth" class="section auth">
+    <div class="section-header">
+      <h2>Login & Signup</h2>
+      <p>
+        Create an account or log in to run real AI scans and view your  
+        personal history of past uploads and camera captures.
+      </p>
+    </div>
+
+    <div class="demo-layout">
+      <!-- Login Panel -->
+      <div class="demo-panel">
+        <h3 class="demo-title">
+          <i class="ri-login-circle-line"></i>
+          <span>Login</span>
+        </h3>
+        <form id="loginForm" class="auth-form">
+          <div class="auth-field">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required />
+          </div>
+          <div class="auth-field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="ri-login-box-line"></i> Log in
+          </button>
+          <p id="loginStatus" class="demo-note"></p>
+        </form>
+      </div>
+
+      <!-- Signup Panel -->
+      <div class="demo-panel">
+        <h3 class="demo-title">
+          <i class="ri-user-add-line"></i>
+          <span>Signup</span>
+        </h3>
+        <form id="signupForm" class="auth-form">
+          <div class="auth-field">
+            <label for="signupName">Name (optional)</label>
+            <input type="text" id="signupName" placeholder="Caregiver name" />
+          </div>
+          <div class="auth-field">
+            <label for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" placeholder="you@example.com" required />
+          </div>
+          <div class="auth-field">
+            <label for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" placeholder="Create a password" required />
+          </div>
+          <button type="submit" class="btn btn-ghost btn-full">
+            <i class="ri-user-add-line"></i> Create account
+          </button>
+          <p id="signupStatus" class="demo-note"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HISTORY SECTION ================= -->
+  <section id="history" class="section history">
+    <div class="section-header">
+      <h2>Your Scan History</h2>
+      <p>
+        Whenever you run a scan while logged in, Eliyon securely stores  
+        a lightweight record of the result and a thumbnail of the image  
+        so you can review past checks.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px;">
+        Only authenticated users can view their own history.  
+        Images are served from your local machine for this demo.
+      </p>
+    </div>
+
+    <div id="historyContainer">
+      <!-- JavaScript will inject history cards here using /history API -->
+      <div class="result-placeholder">
+        <i class="ri-time-line"></i>
+        <p>Log in and run a few scans. Your past results will appear here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section id="how-it-works" class="section how">
+    <div class="section-header">
+      <h2>How Eliyon thinks in two layers</h2>
+      <p>
+        Under the hood, Eliyon uses a <strong>dual-model brain</strong> for kids  
+        and a <strong>paired skin + ear pipeline</strong> for infants.
+      </p>
+    </div>
+
+    <div class="how-grid">
+      <!-- Step timeline -->
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-number">1</div>
+          <div class="how-step-content">
+            <h3>Capture a moment</h3>
+            <p>Parent snaps or uploads a photo of a baby, dog, or cat.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">2</div>
+          <div class="how-step-content">
+            <h3>Emotion analysis</h3>
+            <p>
+              First, Eliyon’s <strong>emotion model</strong> checks facial cues –  
+              crying, laughing, anger, fear, or calm.
+            </p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">3</div>
+          <div class="how-step-content">
+            <h3>Health check pipeline</h3>
+            <p>
+              Then, the <strong>health model(s)</strong> examine skin textures, color  
+              shifts, lesions, rashes, or ear canals.
+            </p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">4</div>
+          <div class="how-step-content">
+            <h3>Smart decision fusion</h3>
+            <p>
+              If general health seems normal but ear model finds risk,  
+              Eliyon prioritizes ear disease (with mild/moderate/severe levels).
+            </p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">5</div>
+          <div class="how-step-content">
+            <h3>Human-readable insight</h3>
+            <p>
+              User sees a simple, readable diagnosis like  
+              “Mild otitis media” + “Baby looks uncomfortable”  
+              with guidance like “Consult pediatrician if symptoms persist.”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual brain diagram -->
+      <div class="how-diagram">
+        <div class="brain-card">
+          <h3>Eliyon Dual-Brain Engine</h3>
+          <div class="brain-layers">
+            <div class="brain-layer">
+              <h4>Emotion Model</h4>
+              <p>
+                Trained on infant/dog/cat facial expressions to  
+                understand mood and discomfort levels.
+              </p>
+              <span class="chip">Kids</span>
+              <span class="chip">Dogs</span>
+              <span class="chip">Cats</span>
+            </div>
+            <div class="brain-layer">
+              <h4>Health Models</h4>
+              <p>
+                Separate <strong>Skin/General Disease Model</strong> and  
+                <strong>Ear Disease Model</strong> for infants.
+              </p>
+              <span class="chip chip-healthy">Skin</span>
+              <span class="chip chip-alert">Ear</span>
+            </div>
+          </div>
+
+          <div class="fusion-card">
+            <h4>Fusion Logic (Example)</h4>
+            <ul>
+              <li>Skin model: “Healthy”</li>
+              <li>Ear model: “Perforation (0.82)”</li>
+              <li><strong>Final:</strong> “Perforation – strong evidence”</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY ELIYON ================= -->
+  <section class="section reasons">
+    <div class="section-header">
+      <h2>Why Eliyon is different from anything before</h2>
+      <p>
+        Not just “another diagnosis app”. Eliyon merges <strong>emotion</strong>,  
+        <strong>multi-species health</strong>, and <strong>ear + skin fusion</strong> in a way  
+        previous tools never did.
+      </p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card">
+        <i class="ri-group-line"></i>
+        <h3>Kids + Dogs + Cats</h3>
+        <p>
+          Most apps handle either humans or pets — not both. Eliyon  
+          is built to care for the entire family in one place.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="ri-emotion-happy-line"></i>
+        <h3>Emotion + Health together</h3>
+        <p>
+          We don’t stop at “disease yes/no”.  
+          We also read <strong>emotional distress</strong>, especially crucial for  
+          infants who can’t talk and animals who can’t explain.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="ri-focus-line"></i>
+        <h3>Early warning signals</h3>
+        <p>
+          Detect subtle skin changes, jaundice tints, and ear issues  
+          before they become emergencies.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="ri-brain-line"></i>
+        <h3>Dual-model fusion</h3>
+        <p>
+          A dedicated ear model can override “healthy” general results,  
+          ensuring critical issues are never silently ignored.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="ri-smartphone-line"></i>
+        <h3>Works anywhere</h3>
+        <p>
+          Just a phone camera is enough. Usable in rural, remote,  
+          or under-resourced clinics or homes.
+        </p>
+      </div>
+      <div class="reason-card">
+        <i class="ri-parent-line"></i>
+        <h3>Built for anxious caregivers</h3>
+        <p>
+          Instead of Googling symptoms, parents and pet owners can  
+          get structured insights in seconds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" class="section faq">
+    <div class="section-header">
+      <h2>FAQ – For judges, doctors, and parents</h2>
+      <p>
+        Transparent, honest, and medically responsible.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is Eliyon a medical device or doctor replacement?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            No. Eliyon is a <strong>decision support + early warning tool</strong>,  
+            not a doctor. It never prescribes treatment.  
+            It simply highlights what looks unusual, so parents know  
+            when to seek professional help sooner.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What’s the main gap Eliyon solves?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Today, baby health apps and pet health apps are separate,  
+            emotion recognition is separate, and ear disease tools  
+            usually rely on hardware otoscopes.  
+            Eliyon uniquely combines:
+          </p>
+          <ul>
+            <li>Multi-species support in one system</li>
+            <li>Emotion + health detection together</li>
+            <li>Skin + ear model fusion with override rules</li>
+            <li>Pure image-based analysis (no extra hardware)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Who can use Eliyon and at what scale?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Eliyon can be used by:
+          </p>
+          <ul>
+            <li>Parents at home for quick reassurance</li>
+            <li>Pediatric clinics to triage visiting patients</li>
+            <li>Animal shelters and vets for fast checks</li>
+            <li>Rural health workers using a shared smartphone</li>
+          </ul>
+          <p>
+            Because it only needs a camera image, it can scale from  
+            a single family to <strong>entire public health networks</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can other apps just “add emotions” easily?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Emotion alone is easy to add.  
+            What is hard (and unique in Eliyon) is:
+          </p>
+          <ul>
+            <li>Emotion models for <strong>infants</strong>, not adults</li>
+            <li>Emotion linked with <strong>specific disease models</strong></li>
+            <li>Fusion logic where, for example,  
+              <em>“normal skin + high-risk ear signal”</em>  
+              still triggers an alert, even if other models say “fine”.</li>
+          </ul>
+          <p>
+            That <strong>multi-model reasoning</strong> is what elevates Eliyon beyond  
+            a simple “add-on emotion feature”.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Is my data private?</span>
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="faq-answer">
+          <p>
+            In a production version, photos can be processed locally on  
+            device or sent to an encrypted server, and then deleted.  
+            For the competition demo, you can mention privacy-first  
+            design and opt-in data usage only for improving models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">E</span>
+        <span class="logo-text">Eliyon</span>
+        <p>Early health whispers, heard in time.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#demo">Live Demo</a>
+        <a href="#history">History</a>
+        <a href="#how-it-works">Tech Overview</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-meta">
+        <span>© 2025 Eliyon Project</span>
+        <span>Made for innovation & impact</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
