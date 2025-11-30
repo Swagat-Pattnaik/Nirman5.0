@@ -1,0 +1,150 @@
+# 🩺 Eliyon – AI Emotion & Health Scanner for Babies, Dogs & Cats 🍼🐶🐱  
+**“Giving a voice to those who cannot speak.”**
+
+Eliyon is an **AI-powered health and emotion pre-screening assistant** designed for **babies (0–5 years), dogs, and cats**.  
+Using only a **photo** captured from a smartphone or webcam, it analyzes:
+
+✔ Emotion (crying, angry, sad, scared, happy, calm)  
+✔ Skin diseases (baby: monkeypox, HFMD, measles, jaundice, dermatitis; pets: fungal, allergic, bacterial infections)  
+✔ Ear diseases (babies: wax, otitis media, perforation, infection, healthy)
+
+It acts as an **early-warning assistant** — *not a medical replacement* — encouraging **timely doctor or vet consultation.**
+
+---
+
+## 🌟 What Makes Eliyon Special?
+
+| Feature | Babies (0–5 yrs) | Dogs | Cats |
+|--------|------------------|------|------|
+| Emotion Analysis | ✔️ | ✔️ | ✔️ |
+| Skin Disease Detection | ✔️ | ✔️ | ✔️ |
+| Ear Disease Detection | ✔️ (otitis, perforation, wax) | ❌ | ❌ |
+| AI Reasoning Fusion | ✔️ (Emotion + Skin + Ear) | ✔️ | ✔️ |
+| Responsive futuristic UI | ✔️ | ✔️ | ✔️ |
+| Login & History tracking | ✔️ | ✔️ | ✔️ |
+
+> ⚠️ **Disclaimer:** Eliyon does **not prescribe treatment**.  
+> It is a **decision support & awareness tool**, not a medical device.
+
+---
+
+## 🧰 Tech Stack
+
+### 🖥 Frontend
+- HTML, CSS, JavaScript  
+- Futuristic responsive UI, device camera access  
+- Interactive scan interface, user authentication, and history display  
+
+### ⚙️ Backend
+- **FastAPI** – Lightning-fast Python API framework  
+- **Uvicorn** – ASGI server  
+- **YOLOv8 (Ultralytics)** – Disease & emotion classification  
+- **OpenCV**, **Torch**, **Pillow**, **Numpy**
+
+### 🗄 Database
+- **MongoDB** – For user authentication & scan history storage  
+- JWT authentication (`python-jose`)  
+- Password encryption (`passlib[bcrypt]`)
+
+---
+
+## 📂 Project Structure
+
+```bash
+emotion/
+├── eliyon_api.py            # FastAPI backend with YOLO inference
+├── index.html               # Frontend UI
+├── style.css                # Styling (gradient, animations)
+├── script.js                # JS – camera, API calls, login, history
+├── uploads/                 # User scan images (local hosting)
+├── models/                  # Best YOLOv8 model weights (.pt files)
+├── unity.py                 # Dataset merging scripts
+├── train.py                 # YOLO model training files
+└── prepare_data.py          # Data cleaning and splitting scripts
+
+Installation & Local Setup Guide
+1. Install Dependencies
+pip install fastapi "uvicorn[standard]" ultralytics numpy opencv-python torch pillow \
+            python-multipart pymongo "passlib[bcrypt]" "python-jose[cryptography]" \
+            pydantic tqdm scikit-learn
+
+
+(Optional) Create requirements.txt for portability.
+
+2. Ensure MongoDB is Running
+
+Install MongoDB locally or connect to MongoDB Atlas.
+
+Default local connection:
+
+mongodb://localhost:27017
+
+
+Collections will generate automatically:
+users, scans
+
+3.  Set YOLO Model Paths in eliyon_api.py
+DOG_EMOTION_PATH = r"C:\...\runs\dog_emotion\weights\best.pt"
+CAT_HEALTH_PATH  = r"C:\...\runs\cat_disease\weights\best.pt"
+BABY_EAR_MODEL_PATH = r"C:\...\runs\baby_ear_disease\weights\best.pt"
+
+
+Make sure these .pt files exist.
+
+4. Start FastAPI Backend
+uvicorn eliyon_api:app --host 0.0.0.0 --port 8000 --reload
+
+
+Expected output:
+
+Uvicorn running on http://0.0.0.0:8000
+Loading Eliyon models for API...
+✅ Models loaded for API.
+
+5.  Open Web App
+
+👉 Open your browser:
+
+http://127.0.0.1:8000/
+
+
+🎯 Features:
+✨ Upload or capture photo
+✨ Real-time YOLO scanning
+✨ Login/signup (JWT authentication)
+✨ Scan history dashboard
+
+📱 Access from Phone using Ngrok
+ngrok http 8000
+
+
+It will generate a link like:
+
+https://abcd-1234.ngrok-free.app
+
+
+✔ Open this link on any phone or tablet
+✔ No hosting needed
+✔ Camera access supported
+
+📸 YOLO Model Capabilities
+Model Type	Species	What it Detects
+Emotion Model	Baby	Crying, Laughing, Normal, Angry
+Emotion Model	Dog	Happy, Alert, Sad, Anxious
+Emotion Model	Cat	Relaxed, Aggressive, Fearful
+Skin Disease Model	Baby	Monkeypox, HFMD, Measles, Jaundice, Eczema
+Ear Disease Model	Baby	Wax, Perforation, Otitis Media, Externa
+Health Model	Dog/Cat	Allergic, Bacterial, Fungal infections, Healthy
+🔐 Ethics, Limitations & Responsible Use
+
+❗ Eliyon does not diagnose or prescribe treatment. It only provides visual insights.
+
+Responsible AI Principles:
+
+📌 Transparency: Clear disclaimers & no false certainty
+
+🧠 Human-in-the-loop: Final decision always belongs to doctor/vet
+
+🕵️ Privacy-first: No cloud image storage (local-only demo)
+
+🧪 Bias awareness: Lighting, ethnicity, rare diseases may affect results
